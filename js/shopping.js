@@ -28,9 +28,9 @@ function calculateTotal() {
   const tax = subTotal / 5;
   const totalAmount = subTotal + tax;
   // update on the html
-  document.getElementById('sub-total').innerText = subTotal;
+  document.getElementById("sub-total").innerText = subTotal;
   document.getElementById("tax").innerText = tax;
-  document.getElementById('totalAmount').innerText = totalAmount;
+  document.getElementById("totalAmount").innerText = totalAmount;
 }
 
 document.getElementById("plus-btn").addEventListener("click", function () {
@@ -46,4 +46,17 @@ document.getElementById("plus-web-btn").addEventListener("click", function () {
 });
 document.getElementById("minus-web-btn").addEventListener("click", function () {
   updateNumber("web", 350, false);
+});
+
+function displayHide(part) {
+  const firstPart = document.getElementById(part + "-part");
+  firstPart.classList.add("d-none");
+}
+
+document.getElementById("crossBtn").addEventListener("click", function () {
+  displayHide('first');
+});
+
+document.getElementById("cross-btn").addEventListener("click", function () {
+  displayHide('second');
 });
